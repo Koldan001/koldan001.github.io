@@ -436,6 +436,7 @@ const CONTACT=[
   {k:'LinkedIn',v:'linkedin.com/in/branimir-koldan',u:'https://www.linkedin.com/in/branimir-koldan'}
 ];
 const NR='https://najavaradova.rs';
+const NRGH='https://github.com/Koldan001/najavaradova';
 
 const ICONS={web:'<circle cx="8" cy="8" r="6"/><path d="M2 8h12M8 2c-2.5 3-2.5 9 0 12M8 2c2.5 3 2.5 9 0 12"/>',scrape:'<path d="M3 1.5h7l3 3v10H3z"/><path d="M10 1.5v3h3M8 7v5M6 10l2 2 2-2"/>',ai:'<rect x="4" y="4" width="8" height="8"/><path d="M6.5 6.5h3v3h-3zM6 1v3M10 1v3M6 12v3M10 12v3M1 6h3M1 10h3M12 6h3M12 10h3"/>',shield:'<path d="M8 1.5l5.5 2v4.5c0 3.3-2.4 5.6-5.5 6.5-3.1-.9-5.5-3.2-5.5-6.5V3.5z"/><path d="M5.5 8l1.8 1.8L10.8 6.3"/>',pin:'<path d="M8 14.5s4.5-4.4 4.5-8a4.5 4.5 0 0 0-9 0c0 3.6 4.5 8 4.5 8z"/><circle cx="8" cy="6.5" r="1.7"/>',map:'<path d="M1.5 3.5l4-1.5 5 1.5 4-1.5v10.5l-4 1.5-5-1.5-4 1.5z"/><path d="M5.5 2v10.5M10.5 3.5V14"/>',bell:'<path d="M4 11V7a4 4 0 0 1 8 0v4l1.5 1.5h-11z"/><path d="M6.5 14.5h3"/>',box:'<path d="M8 1.5l6 3v7l-6 3-6-3v-7z"/><path d="M2 4.5l6 3 6-3M8 7.5v7"/>',ci:'<circle cx="3" cy="8" r="1.8"/><circle cx="13" cy="8" r="1.8"/><path d="M4.8 8h6.4M9 5.8L11.2 8 9 10.2"/>',pulse:'<path d="M1 8.5h3l2-5 3 9 2-4h4"/>',sheet:'<rect x="2" y="2" width="12" height="12"/><path d="M2 6h12M2 10h12M6 2v12"/>',cal:'<rect x="2" y="3" width="12" height="11"/><path d="M2 6.5h12M5 1.5v3M11 1.5v3M5 9.5h2M9 9.5h2M5 12h2"/>',flow:'<rect x="1" y="6" width="4" height="4"/><rect x="11" y="1.5" width="4" height="4"/><rect x="11" y="10.5" width="4" height="4"/><path d="M5 8h3M8 3.5v9M8 3.5h3M8 12.5h3"/>',user:'<circle cx="8" cy="5" r="3"/><path d="M2.5 15c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/>',eye:'<path d="M1 8s2.5-5 7-5 7 5 7 5-2.5 5-7 5-7-5-7-5z"/><circle cx="8" cy="8" r="2"/>',cam:'<rect x="1.5" y="4.5" width="13" height="9"/><path d="M5.5 4.5l1-2h3l1 2"/><circle cx="8" cy="9" r="2.5"/>',db:'<ellipse cx="8" cy="3.5" rx="5.5" ry="2"/><path d="M2.5 3.5v9c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2v-9M2.5 8c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2"/>',server:'<rect x="2" y="2" width="12" height="5"/><rect x="2" y="9" width="12" height="5"/><path d="M4.5 4.5h1M4.5 11.5h1"/>',code:'<path d="M5 4L1.5 8 5 12M11 4l3.5 4L11 12M9.5 2.5l-3 11"/>',image:'<rect x="1.5" y="2.5" width="13" height="11"/><path d="M1.5 11l4-4 3 3 2-2 4 4"/><circle cx="11" cy="6" r="1.2"/>',cap:'<path d="M8 3L1 6.5 8 10l7-3.5z"/><path d="M4 8v3.5c1 1 2.5 1.5 4 1.5s3-.5 4-1.5V8M15 6.5v4"/>',game:'<rect x="1.5" y="4.5" width="13" height="8" rx="3"/><path d="M4.5 8.5h3M6 7v3"/><circle cx="10.5" cy="7.5" r=".6"/><circle cx="12" cy="9.5" r=".6"/>'};
 const icon=k=>ICONS[k]?'<svg class="ic" viewBox="0 0 16 16" aria-hidden="true">'+ICONS[k]+'</svg>':'';
@@ -444,7 +445,7 @@ const PROJECTS=[
  {name:'NajavaRadova.rs',kind:'web',feat:[['scrape','Reads utility websites'],['ai','LLM turns notices into data'],['shield','Validation + second-model check'],['pin','Matches exact addresses'],['map','Live outage map'],['bell','Telegram + email alerts'],['box','Docker on Oracle Cloud'],['ci','CI/CD with tests'],['pulse','Monitoring + watchdogs']],type:'Live service',ping:12,status:['live','ok'],
   summary:'Alerts people in Serbia by Telegram or email when a power, water or heating outage is announced for their exact address. Built and run solo since August 2026.',
   stack:['Python','Gemini API','Pydantic','SQLite','H3','Docker Compose','GitHub Actions','Cloudflare','Oracle Cloud'],
-  link:['najavaradova.rs',NR],
+  link:['najavaradova.rs',NR],code:NRGH,
   detail:'<h2>NajavaRadova.rs</h2>'+
    '<p>Outage notices in Serbia are spread across many utility websites, each in its own format: tables, long posts, Cyrillic and Latin, street lists with house ranges. NajavaRadova.rs reads them, understands them, and tells you only when your address is affected.</p>'+
    '<div class="pipe"><span>scrape</span><b>→</b><span>split</span><b>→</b><span>LLM read</span><b>→</b><span>resolve streets</span><b>→</b><span>H3 match</span><b>→</b><span>check</span><b>→</b><span>queue</span><b>→</b><span>Telegram / email</span></div>'+
@@ -467,7 +468,7 @@ const PROJECTS=[
     '<li>A utility\'s server kept returning a stale cached page, so new notices never arrived. I added no-cache requests and a watchdog that flags sources whose content stops changing.</li>'+
     '<li>Matching street names by substring alerted the wrong buildings. I switched to whole-word matching and added tests that replay real notices.</li>'+
     '<li>A street with the same name in a nearby town put an outage in the wrong place. I capped the search distance and added the municipality guard.</li></ul>'+
-   '<p style="margin-top:14px"><a href="'+NR+'" target="_blank" rel="noopener">Open najavaradova.rs</a></p>'},
+   '<p style="margin-top:14px"><a href="'+NR+'" target="_blank" rel="noopener">Open najavaradova.rs</a> · <a href="'+NRGH+'" target="_blank" rel="noopener">Source code on GitHub</a></p>'},
  {name:'Tutor automation',kind:'sheet',feat:[['sheet','Tracks payment checks'],['cal','Fills weekly lesson plans']],type:'Kodland',ping:18,status:['in use','ok'],
   summary:'A Google Sheets and Apps Script tool for fellow Kodland tutors. It tracks incoming payment checks and fills each tutor\'s calendar with that week\'s lesson plan.',
   stack:['Google Sheets','Apps Script']},
@@ -585,7 +586,8 @@ function infoHtml(r){
   const chips=(r.status&&r.status[0]?'<span class="chip '+r.status[1]+'">'+esc(r.status[0])+'</span>':'')+(r.stack||[]).map(s=>'<span class="chip">'+esc(s)+'</span>').join('')+(r.learn||[]).map(s=>'<span class="chip learn" title="learning now">'+esc(s)+'</span>').join('');
   return '<h3>'+esc(r.name)+'</h3><div class="when">'+esc(r.type)+'</div>'+(chips?'<div class="chips">'+chips+'</div>':'')+'<p>'+esc(r.summary)+'</p>'+(r.feat?'<div class="fh">What it does</div>'+featsHtml(r):'')+
     (r.points?'<ul class="list">'+r.points.map(p=>'<li>'+esc(p)+'</li>').join('')+'</ul>':'')+
-    (r.link?'<a href="'+esc(r.link[1])+'"'+ext(r.link[1])+'>'+esc(r.link[0])+'</a>':'')}
+    (r.link?'<a href="'+esc(r.link[1])+'"'+ext(r.link[1])+'>'+esc(r.link[0])+'</a>':'')+
+    (r.code?' · <a href="'+esc(r.code)+'"'+ext(r.code)+'>Source code</a>':'')}
 function detailHtml(r){
   const f=r.feat?'<h3>What it does</h3>'+featsHtml(r):'';
   if(r.detail){const i=r.detail.indexOf('</p>');return i<0?r.detail+f:r.detail.slice(0,i+4)+f+r.detail.slice(i+4)}
@@ -661,7 +663,7 @@ const OPEN={about:'w-about',projects:'w-projects',experience:'w-exp',education:'
 const CMD={
   help:()=>out('about · projects · experience · education · skills · contact · cv · najava · clear · quit'),
   cv:()=>{out('downloading CV...','var(--ok)');const l=document.createElement('a');l.href='Branimir_Koldan_CV.pdf';l.download='';document.body.appendChild(l);l.click();l.remove()},
-  najava:()=>out('NajavaRadova.rs: scrape → LLM read → resolve streets → H3 match → check → Telegram / email. <a href="'+NR+'" target="_blank" rel="noopener">najavaradova.rs</a>'),
+  najava:()=>out('NajavaRadova.rs: scrape → LLM read → resolve streets → H3 match → check → Telegram / email. <a href="'+NR+'" target="_blank" rel="noopener">najavaradova.rs</a> · <a href="'+NRGH+'" target="_blank" rel="noopener">source</a>'),
   clear:()=>{col.innerHTML=''},
   quit:()=>openWin('w-quit')};
 $('cof').addEventListener('submit',e=>{e.preventDefault();const raw=$('coi').value.trim();$('coi').value='';const v=raw.toLowerCase();
