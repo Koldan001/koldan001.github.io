@@ -586,8 +586,8 @@ function infoHtml(r){
   const chips=(r.status&&r.status[0]?'<span class="chip '+r.status[1]+'">'+esc(r.status[0])+'</span>':'')+(r.stack||[]).map(s=>'<span class="chip">'+esc(s)+'</span>').join('')+(r.learn||[]).map(s=>'<span class="chip learn" title="learning now">'+esc(s)+'</span>').join('');
   return '<h3>'+esc(r.name)+'</h3><div class="when">'+esc(r.type)+'</div>'+(chips?'<div class="chips">'+chips+'</div>':'')+'<p>'+esc(r.summary)+'</p>'+(r.feat?'<div class="fh">What it does</div>'+featsHtml(r):'')+
     (r.points?'<ul class="list">'+r.points.map(p=>'<li>'+esc(p)+'</li>').join('')+'</ul>':'')+
-    (r.link?'<a href="'+esc(r.link[1])+'"'+ext(r.link[1])+'>'+esc(r.link[0])+'</a>':'')+
-    (r.code?' · <a href="'+esc(r.code)+'"'+ext(r.code)+'>Source code</a>':'')}
+    (r.link?'<div><a href="'+esc(r.link[1])+'"'+ext(r.link[1])+'>'+esc(r.link[0])+'</a>'+
+      (r.code?' · <a href="'+esc(r.code)+'"'+ext(r.code)+'>Source code</a>':'')+'</div>':'')}
 function detailHtml(r){
   const f=r.feat?'<h3>What it does</h3>'+featsHtml(r):'';
   if(r.detail){const i=r.detail.indexOf('</p>');return i<0?r.detail+f:r.detail.slice(0,i+4)+f+r.detail.slice(i+4)}
